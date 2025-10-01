@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ImageModal from '../components/ImageModal.astro';
+---
+
+<Layout title="Gallery - Photoless">
+  <Header />
+  
+  <main class="max-w-6xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-light text-black mb-12 text-center">Gallery</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Placeholder images -->
+      {Array.from({ length: 9 }).map((_, i) => (
+        <div 
+          class="aspect-square bg-gray-100 hover:bg-gray-200 transition-colors cursor-pointer gallery-image"
+          data-src="/placeholder-image-{i + 1}.jpg"
+          data-alt="Photo {i + 1}"
+        >
+          <div class="w-full h-full flex items-center justify-center text-gray-400">
+            Photo {i + 1}
+          </div>
+        </div>
+      ))}
+    </div>
+  </main>
+  
+  <ImageModal />
+</Layout>

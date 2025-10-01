@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+const photos = [
+  {
+    id: 1,
+    title: "Urban Shadows",
+    camera: "Canon EOS R5",
+    lens: "24-70mm f/2.8",
+    settings: "f/4.0 • 1/125s • ISO 400",
+    location: "Downtown District"
+  },
+  {
+    id: 2,
+    title: "Morning Light",
+    camera: "Sony A7R IV",
+    lens: "85mm f/1.4",
+    settings: "f/2.8 • 1/250s • ISO 200",
+    location: "Central Park"
+  },
+  {
+    id: 3,
+    title: "Minimalist Architecture",
+    camera: "Fujifilm X-T4",
+    lens: "16-55mm f/2.8",
+    settings: "f/8.0 • 1/60s • ISO 100",
+    location: "Modern Art Museum"
+  },
+  {
+    id: 4,
+    title: "Street Portrait",
+    camera: "Leica Q2",
+    lens: "28mm f/1.7",
+    settings: "f/2.0 • 1/500s • ISO 800",
+    location: "Old Town"
+  }
+];
+---
+
+<Layout title="Lab - Photoless">
+  <Header />
+  
+  <main class="max-w-4xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-light text-black mb-12 text-center">Lab</h1>
+    
+    <div class="space-y-24">
+      {photos.map((photo, index) => (
+        <div class="pb-12 border-b border-gray-200 last:border-b-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div class="aspect-[4/5] bg-gray-100 flex items-center justify-center text-gray-400">
+              {photo.title}
+            </div>
+            
+            <div class="space-y-4">
+              <h2 class="text-2xl font-light text-black">{photo.title}</h2>
+              
+              <div class="space-y-2 text-sm text-gray-600">
+                <div class="flex justify-between">
+                  <span>Camera:</span>
+                  <span>{photo.camera}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Lens:</span>
+                  <span>{photo.lens}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Settings:</span>
+                  <span>{photo.settings}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Location:</span>
+                  <span>{photo.location}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    </div>
+  </main>
+</Layout>

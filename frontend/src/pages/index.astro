@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout title="Photoless - Photography Portfolio">
+  <Header />
+  
+  <main class="max-w-6xl mx-auto px-4 py-16">
+    <div class="text-center">
+      <h1 class="text-5xl font-light text-black mb-6 tracking-wide">
+        Photography Portfolio
+      </h1>
+      <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+        Capturing moments through a minimalist lens
+      </p>
+      
+      <div class="flex justify-center space-x-4">
+        <a href="/gallery" class="bg-black text-white px-8 py-3 hover:bg-gray-800 transition-colors">
+          View Gallery
+        </a>
+        <a href="/about" class="border border-gray-300 text-gray-700 px-8 py-3 hover:border-gray-400 transition-colors">
+          About Me
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>
